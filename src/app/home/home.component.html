@@ -1,0 +1,24 @@
+<h1>Welcome to Angular</h1>
+<p>chào bạn {{name}}</p>
+<p>Bạn đã {{age}} tuổi</p>
+<span *ngIf="age < 18; then TrueCondition1; else FalseCondition2" class="underage" Mycolor></span>
+<br />
+<ng-template #TrueCondition1 class="underage"><span appBold>Bạn dưới 18</span></ng-template>
+<ng-template #FalseCondition2 class="underage"><span>Bạn trên 18</span></ng-template>
+<br />
+
+<input [(ngModel)]="name">
+<br />
+<br />
+<button appBold (click)="tangtuoi()">Tăng tuổi</button>
+<br /><br />
+Danh sách xe : <br />
+<div *ngFor="let vehicle of vehicles">
+    <li>{{ vehicle }}</li>
+</div>
+<br />
+<div>
+  <select name="" id="" >
+    <option *ngFor="let vehicle of vehicles" value="">{{ vehicle }}</option>
+  </select>
+</div>

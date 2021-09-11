@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Học về Form</h1>
+  <form (ngSubmit)= "onSubmit()" #myForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" name="name" id="name" required [(ngModel)] = "name"/>
+      <span *ngIf="name === ''">*Can phai nhap ten</span>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="text"
+      class="form-control" id="password" [(ngModel)] = "password" name="password" required/>
+      <span *ngIf="password === ''">*Can phai mat khau</span>
+    </div>
+    <div class="form-group">
+      <label for="vehicles">vehicles</label> &nbsp;
+      <select (change)= "selectedvehicles($event)" >
+        <option *ngFor="let vehicle of vehicles" value="">{{ vehicle }}</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!myForm.form.valid">Submit</button>
+  </form>
+</div>
